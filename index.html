@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pradeep Kapa</title>
+<style>
+:root{--bg:#f5f3ee;--card:#ffffff;--card2:#f2ece4;--text:#1b2430;--muted:#64748b;--line:#d9d9d2;--shadow:0 18px 50px rgba(15,23,42,.08);--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}.wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+header{position:sticky;top:0;z-index:20;background:rgba(245,243,238,.95);border-bottom:1px solid var(--line)}.bar{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:20px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;border:2px solid #1f2937;border-radius:14px;padding:8px 12px;background:#fff}.logo{width:44px;height:44px;border-radius:999px;background:linear-gradient(135deg,#0f766e,#2563eb);display:grid;place-items:center;color:#fff;font-weight:800}.brand span{font-weight:800;letter-spacing:.02em}.nav{display:flex;gap:18px;flex-wrap:wrap}.nav button{background:none;border:none;padding:0;font-size:17px;color:#64748b;cursor:pointer;position:relative}.nav button.active,.nav button:hover{color:#1b2430}.nav button.active::after,.nav button:hover::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#1b2430}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;padding:64px 0 28px;min-height:calc(100vh - 100px)}.eyebrow{display:inline-flex;padding:14px 20px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.75);color:#738196;letter-spacing:.18em;text-transform:uppercase;font-size:12px}.title{font-family:Georgia,Times,serif;font-size:clamp(4rem,7vw,6.6rem);line-height:.87;letter-spacing:-.05em;margin:22px 0 0;max-width:7ch}.sub{margin-top:24px;color:#667085;font-size:clamp(1.05rem,1.2vw,1.28rem);max-width:50ch}.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 22px;border-radius:999px;font-weight:700;border:1px solid var(--line)}.btn.primary{background:#121826;color:#fff;border-color:#121826}.btn.secondary{background:#fff}
+.snapshot{background:#fff;border:1px solid #e7e1d7;border-radius:28px;box-shadow:var(--shadow);padding:34px}.snap-h{color:#94a3b8;letter-spacing:.16em;text-transform:uppercase;font-size:12px;margin-bottom:14px}.snap-p{font-size:clamp(1.1rem,1.15vw,1.45rem);line-height:1.7;color:#475569;max-width:35ch}.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.stat{background:#f3ede5;border:1px solid #e4dbcf;border-radius:26px;padding:24px 20px}.stat strong{display:block;font-size:clamp(2rem,2.3vw,3rem);line-height:1;color:#101828}.stat span{display:block;margin-top:10px;font-size:18px;line-height:1.5;color:#111827}
+.page{display:none;padding:36px 0 72px}.page.active{display:block}.h2{font-family:Georgia,Times,serif;font-size:clamp(2rem,3vw,3.6rem);margin:0 0 22px;line-height:1}.card{background:rgba(255,255,255,.8);border:1px solid #e7e1d7;border-radius:24px;padding:26px;box-shadow:var(--shadow)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.muted{color:#64748b}.timeline{display:grid;gap:18px}.item h3{font-size:22px;margin:0 0 6px}.item .meta{color:#94a3b8;margin-bottom:12px}.item ul{margin:0;padding-left:20px;color:#475569;display:grid;gap:10px}.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:8px 12px;border-radius:999px;background:#f2ece4;border:1px solid #e4dbcf;color:#475569;font-size:14px}
+.cert-badges{display:grid;gap:14px;margin-top:10px}
+.cert-hero{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin-bottom:18px;padding:18px 20px;border-radius:22px;background:linear-gradient(135deg,rgba(15,118,110,.08),rgba(37,99,235,.08));border:1px solid #e4dbcf}
+.cert-hero h4{margin:0;font-size:20px}
+.cert-hero p{margin:6px 0 0;color:#64748b}
+.badge-link{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:20px;border:1px solid #e4dbcf;background:linear-gradient(180deg,#fff,#f9f6f1);box-shadow:0 10px 24px rgba(15,23,42,.05)}
+.badge-circle{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.04em;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.badge-circle.aws{background:linear-gradient(135deg,#ff9900,#232f3e)}
+.badge-circle.tf{background:linear-gradient(135deg,#7b42bc,#2e7cf6)}
+.badge-link strong{display:block;font-size:16px;color:#1b2430}
+.badge-link span{display:block;font-size:13px;color:#64748b;margin-top:2px}
+.footer{padding:18px 0 40px;color:#94a3b8;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){.hero,.grid2{grid-template-columns:1fr}.title{max-width:9ch}.stats{grid-template-columns:1fr 1fr}}@media (max-width:640px){.nav{gap:14px}.nav button{font-size:15px}.stats,.grid2{grid-template-columns:1fr}.title{font-size:clamp(3rem,14vw,4.3rem)}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar"><div class="brand"><div class="logo">R</div><span>PRADEEP KAPA</span></div><nav class="nav"><button class="active" data-route="home">Home</button><button data-route="about">About</button><button data-route="experience">Experience</button><button data-route="projects">Projects</button><button data-route="skills">Skills</button><button data-route="education">Education</button><button data-route="certifications">Certifications</button><button data-route="contact">Contact</button></nav></div></header>
+<main class="wrap">
+<section class="hero page active" id="home" data-page="home">
+<div><div class="eyebrow">Senior Software Engineer · Cloud · SRE · AI Platforms</div><h1 class="title">Reliable infrastructure for cloud and AI systems.</h1><p class="sub">Pradeep Kapa builds reliable cloud and AI platforms for teams that need security, speed, and operational clarity. His work spans Kubernetes, GitOps, multi-cloud delivery, observability, and secure AI data access.</p><div class="buttons"><a class="btn primary" href="resume.pdf" download>Download Resume</a><a class="btn secondary" href="mailto:Pradeep.Kapa@yahoo.com">Email Pradeep</a></div></div>
+<aside class="snapshot"><div class="snap-h">Snapshot</div><div class="snap-p">Focused on self-healing platforms, secure AI data connectivity, container orchestration, and cost-aware cloud delivery for production systems.</div><div class="stats"><div class="stat"><strong>8+ yrs</strong><span>Cloud, SRE, and platform engineering</span></div><div class="stat"><strong>99.9%</strong><span>Availability for critical workloads</span></div><div class="stat"><strong>60%</strong><span>Faster provisioning and autoscaling gains</span></div><div class="stat"><strong>20–40%</strong><span>Infrastructure and cloud cost reductions</span></div></div></aside>
+</section>
+
+<section class="page" data-page="about">
+<h2 class="h2">About</h2>
+<div class="grid2">
+<div class="card"><p>I am a Senior Software Engineer focused on cloud platforms, SRE, and AI infrastructure. My work is about building systems that stay reliable, scale cleanly, and feel simple for engineers to use.</p></div>
+<div class="card"><p>I care about self-healing infrastructure, secure platform design, strong developer experience, and practical automation that removes friction from shipping software.</p></div>
+</div>
+</section>
+
+<section class="page" data-page="experience">
+<h2 class="h2">Experience</h2>
+<div class="timeline">
+<div class="card item">
+<h3>Cloud platform leadership</h3>
+<div class="meta">Banking, analytics, and developer platform environments</div>
+<ul>
+<li>Designed resilient infrastructure patterns that support secure AI access, multi-cloud delivery, and production reliability.</li>
+<li>Built systems that remove operational bottlenecks and let engineers ship safely and quickly.</li>
+</ul>
+</div>
+<div class="card item">
+<h3>Operational excellence</h3>
+<div class="meta">Automation, observability, and reliability engineering</div>
+<ul>
+<li>Improved deployment pipelines, scaling behavior, and failure recovery across complex cloud environments.</li>
+<li>Focused on practical reliability, measurable cost control, and platform simplicity.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="page" data-page="projects">
+<h2 class="h2">Projects</h2>
+<div class="grid2">
+<div class="card"><h3>Secure internal AI access</h3><p class="muted">Built the foundation for safe, structured access to internal banking data through an MCP-based platform pattern.</p></div>
+<div class="card"><h3>Elastic Kubernetes delivery</h3><p class="muted">Designed cloud delivery and scaling patterns that make infrastructure easier to run, faster to ship, and cheaper to operate.</p></div>
+</div>
+</section>
+
+<section class="page" data-page="skills">
+<h2 class="h2">Skills</h2>
+<div class="card">
+<p class="muted">Areas you work in across platform engineering, AI infrastructure, and reliability.</p>
+<div style="height:14px"></div>
+<div class="chips">
+<span class="chip">AWS</span><span class="chip">GCP</span><span class="chip">Azure</span><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">ArgoCD</span><span class="chip">Cilium</span><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Python</span><span class="chip">Go</span><span class="chip">FinOps</span><span class="chip">MCP</span><span class="chip">eBPF</span><span class="chip">GitOps</span>
+</div>
+</div>
+</section>
+
+<section class="page" data-page="education">
+<h2 class="h2">Education</h2>
+<div class="grid2">
+<div class="card">
+<h3>Formal education</h3>
+<p>Frostburg State University — Master of Science, Computer Science.</p>
+<p>Jawaharlal Nehru Technological University Hyderabad — Bachelor of Technology, Electronics and Communications Engineering.</p>
+</div>
+<div class="card">
+<h3>Learning mindset</h3>
+<p class="muted">I keep learning close to the work: cloud architecture, AI platform patterns, security, and operational reliability.</p>
+</div>
+</div>
+</section>
+
+<section class="page" data-page="certifications">
+<h2 class="h2">Certifications</h2>
+<div class="grid2">
+<div class="card">
+<div class="cert-hero">
+<div><h4>Certification highlights</h4><p>Presented as visual badges rather than resume bullets.</p></div>
+<div class="chips"><span class="chip">Verified</span><span class="chip">Portfolio-ready</span></div>
+</div>
+<h3>Credentials</h3>
+<div class="cert-badges">
+<a class="badge-link" href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-professional" target="_blank" rel="noopener noreferrer" aria-label="AWS Certified Solutions Architect Professional badge">
+<div class="badge-circle aws">AWS</div>
+<div><strong>AWS Solutions Architect</strong><span>Professional</span></div>
+</a>
+<a class="badge-link" href="https://www.credly.com/org/hashicorp/badge/hashicorp-certified-terraform-associate-002" target="_blank" rel="noopener noreferrer" aria-label="HashiCorp Terraform Associate badge">
+<div class="badge-circle tf">TF</div>
+<div><strong>Terraform Associate</strong><span>HashiCorp Certified</span></div>
+</a>
+</div>
+</div>
+<div class="card">
+<h3>Recognition</h3>
+<div class="chips"><span class="chip">Cloud Architecture</span><span class="chip">Infrastructure Automation</span><span class="chip">Secure Delivery</span><span class="chip">Platform Reliability</span></div>
+<div style="height:12px"></div>
+<p class="muted">These credentials align with the portfolio’s focus on dependable cloud platforms, automation, and AI-ready infrastructure.</p>
+</div>
+</div>
+</section>
+
+<section class="page" data-page="contact">
+<h2 class="h2">Contact</h2>
+<div class="card">
+<p>The easiest ways to reach me.</p>
+<p><a href="mailto:Pradeep.Kapa@yahoo.com">Pradeep.Kapa@yahoo.com</a></p>
+<p><a href="tel:+13013384238">(301) 338-4238</a></p>
+<p><a href="https://www.linkedin.com/in/pradeepkapa" target="_blank">LinkedIn</a></p>
+</div>
+</section>
+</main>
+<footer class="wrap footer">
+<span>Minimal Framer-style sample.</span>
+<span>Save as index.html and open locally.</span>
+</footer>
+<script>
+const pages=[...document.querySelectorAll('.page')],btns=[...document.querySelectorAll('[data-route]')],valid=new Set(pages.map(p=>p.dataset.page));
+function show(route){const cur=valid.has(route)?route:'home';pages.forEach(p=>p.classList.toggle('active',p.dataset.page===cur));btns.forEach(b=>b.classList.toggle('active',b.dataset.route===cur));history.replaceState(null,'','#'+cur);window.scrollTo({top:0,behavior:'auto'})}
+btns.forEach(b=>b.addEventListener('click',e=>{e.preventDefault();show(b.dataset.route)}));window.addEventListener('hashchange',()=>show(location.hash.slice(1)));show(location.hash.slice(1)||'home');
+</script>
+</body>
+</html>
