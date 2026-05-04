@@ -24,7 +24,7 @@
 .hero-name-block { display:flex; flex-direction:column; justify-content:center; gap:6px; }
 .hero-name { font-family:var(--display); font-weight:700; font-size:2.2rem; line-height:1.1; letter-spacing:-0.02em; color:var(--ink); margin:0; }
 .hero-title { font-family:var(--mono); font-size:10px; color:var(--ink3); letter-spacing:0.08em; text-transform:uppercase; margin:0; }
-.hero-desc { font-size:14px; line-height:1.7; color:var(--ink2); max-width:420px; margin:1.5rem 0 2rem; }
+.hero-desc { font-size:14px; line-height:1.85; color:var(--ink2); max-width:420px; margin:1.75rem 0 2.25rem; }
 .hero-btns { display:flex; gap:10px; flex-wrap:wrap; }
 .btn-primary { font-family:var(--mono); font-size:11px; background:var(--ink); color:var(--surface); padding:10px 20px; border-radius:100px; text-decoration:none; letter-spacing:0.04em; }
 .btn-ghost { font-family:var(--mono); font-size:11px; border:1px solid var(--ink); color:var(--ink); padding:10px 20px; border-radius:100px; text-decoration:none; letter-spacing:0.04em; }
@@ -171,6 +171,10 @@ footer { padding: 2rem 4rem; border-top: 1px solid var(--surface3); display: fle
 .nav-links { display: none; }
 .nav-cta { display: none; }
 .nav-menu-btn { display: block; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 2.5rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--surface3); }
+  .hero-right { padding: 2rem 1.5rem; min-height: 260px; }
+  .hero-stats { gap: 1.25rem; }
 section { padding: 3rem 1.5rem; }
 .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 .impact-row { grid-template-columns: 1fr 1fr; }
@@ -239,7 +243,7 @@ footer { padding: 1.5rem 2.5rem; }
             <div class="hero-title">Senior Software Engineer · Cloud · SRE · AI Platforms</div>
           </div>
         </div>
-        <p class="hero-desc">8+ years building the high-performance infrastructure that powers AI and FinTech platforms — specializing in Kubernetes, GitOps, and AI-native cloud systems.</p>
+        <p class="hero-desc">8+ years building the high-performance infrastructure that powers AI and FinTech platforms —<br>specializing in Kubernetes, GitOps, and AI-native cloud systems.</p>
         <div class="hero-btns">
           <a class="btn-primary" href="mailto:Pradeep.Kapa@yahoo.com">get in touch</a>
           <a class="btn-ghost" href="https://www.linkedin.com/in/pradeepkapa" target="_blank" rel="noopener">linkedin ↗</a>
@@ -259,7 +263,7 @@ footer { padding: 1.5rem 2.5rem; }
         <div class="role-line">AI/ML Infrastructure</div>
         <div class="role-line">Cloud Platform</div>
         <div class="role-line">SRE &amp; DevOps</div>
-        <div class="role-line">FinTech Systems</div>
+        <div class="role-line">Distributed Systems</div>
       </div>
       <div class="hero-right-bottom">
         <div class="tech-tags">
@@ -329,7 +333,7 @@ footer { padding: 1.5rem 2.5rem; }
         <div class="proj-icon" style="background:rgba(15,110,86,0.1)"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <div class="proj-links"><a href="https://pradeep-kapa.github.io/tech-blog/mcp-agent-architecture.html" class="proj-link" style="color:var(--accent2);border-color:rgba(0,200,150,0.3)">Read article ↗</a></div>
       </div>
-      <div><div class="featured-badge">Featured</div><div class="proj-name">Banking MCP Gateway <span style="font-family:var(--mono);font-size:9px;color:var(--accent2);border:1px solid rgba(0,200,150,0.3);padding:2px 6px;border-radius:4px;vertical-align:middle">coming soon</span></div><div class="proj-desc">Secure Model Context Protocol server enabling structured LLM access to internal banking data — replaces fragmented API integrations with a single auditable data layer.</div></div>
+      <div><div class="featured-badge">Featured</div><div class="proj-name">MCP Gateway <span style="font-family:var(--mono);font-size:9px;color:var(--accent2);border:1px solid rgba(0,200,150,0.3);padding:2px 6px;border-radius:4px;vertical-align:middle">coming soon</span></div><div class="proj-desc">Secure Model Context Protocol server enabling structured LLM access to internal banking data — replaces fragmented API integrations with a single auditable data layer.</div></div>
       <div class="proj-tags"><span class="proj-tag tag-ai">MCP</span><span class="proj-tag tag-ai">LLM</span><span class="proj-tag tag-infra">Kubernetes</span><span class="proj-tag tag-default">Python</span><span class="proj-tag tag-infra">AWS EKS</span></div>
       <div class="proj-meta"><span class="proj-stat"><span class="proj-lang-dot" style="background:#3572A5"></span>&nbsp;Python</span></div>
     </div>
